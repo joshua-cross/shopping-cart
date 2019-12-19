@@ -1,7 +1,7 @@
 export default class Basket {
     private totalPrice: number = 0;
 
-    private items: object = {
+    public items: object = {
         'apple': {
             price: 0.50,
             quantity: 0,
@@ -156,5 +156,13 @@ export default class Basket {
             ITEM.stock = ITEM.initialStock;
             ITEM.quantity = 0;
         }
+    }
+
+    public totalQuantity(): number {
+        var quantity: number = 0;
+        for(let key in this.items) {
+            quantity += Object(this.items)[key].quantity;
+        }
+        return quantity;
     }
 }

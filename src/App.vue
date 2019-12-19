@@ -1,18 +1,27 @@
 <template>
-  <div></div>
+  <div>
+    <app-cart></app-cart>
+  </div>
 </template>
 
-<script lang="ts">
+<script>
 import { Component, Vue } from 'vue-property-decorator';
-
-@Component({
+import Cart from './components/Cart';
+export default {
   components: {
-  },
-})
-export default class App extends Vue {}
+    appCart: Cart
+  }
+}
 </script>
 
 <style lang="scss">
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

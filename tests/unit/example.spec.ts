@@ -203,5 +203,16 @@ describe('Basket', () => {
     expect(basket.total()).toEqual(1.65);
   })
 
-  
+  it('Should return the quantity 6 if we add 6 items', () => {
+    let basket: Basket = new Basket();
+    basket.scan('apple');
+    basket.scan('apple');
+    basket.scan('orange');
+    basket.scan('orange');
+    basket.scan('orange');
+    basket.scan('pear');
+    basket.scan('pear');
+    basket.remove('pear');
+    expect(basket.totalQuantity()).toEqual(6);
+  })
 });
